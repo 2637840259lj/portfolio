@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://18ciw5xvxd54"]
+
+[ext_resource type="Script" uid="uid://bbw3v2305iwxj" path="res://Main.cs" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b0wk3v3ngmji3" path="res://game.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Control" unique_id=1802045760 node_paths=PackedStringArray("joinButton", "hostButton", "_ipInput", "_portInput", "_nicknameInput", "_passwordInput", "_statusLabel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+GameScene = ExtResource("2_0xm2m")
+joinButton = NodePath("JoinButton")
+hostButton = NodePath("HostButton")
+_ipInput = NodePath("IpInput")
+_portInput = NodePath("PortInput")
+_nicknameInput = NodePath("NicknameInput")
+_passwordInput = NodePath("PasswordInput")
+_statusLabel = NodePath("StatusLabel")
+
+[node name="Title" type="Label" parent="." unique_id=1450370990]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 75.0
+offset_right = 782.0
+offset_bottom = 163.0
+theme_override_font_sizes/font_size = 64
+text = "多人游戏演示"
+
+[node name="NicknameInput" type="LineEdit" parent="." unique_id=1439450223]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 120.0
+offset_right = 838.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "昵称（1-16字，房间内唯一）"
+
+[node name="PasswordInput" type="LineEdit" parent="." unique_id=1439450224]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 185.0
+offset_right = 838.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 32
+secret = true
+placeholder_text = "房间密码（可选，创建/加入都要填一致）"
+
+[node name="IpInput" type="LineEdit" parent="." unique_id=1439450222]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 250.0
+offset_right = 838.0
+offset_bottom = 303.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "服务器IP（默认127.0.0.1）"
+
+[node name="PortInput" type="LineEdit" parent="." unique_id=935099800]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 315.0
+offset_right = 838.0
+offset_bottom = 368.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "服务器Port（默认7777）"
+
+[node name="StatusLabel" type="Label" parent="." unique_id=935099801]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 382.0
+offset_right = 871.0
+offset_bottom = 415.0
+theme_override_colors/font_color = Color(1, 0.4, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = ""
+horizontal_alignment = 1
+
+[node name="JoinButton" type="Button" parent="." unique_id=1418903422]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 425.0
+offset_right = 468.0
+offset_bottom = 478.0
+theme_override_font_sizes/font_size = 40
+text = "加入房间"
+
+[node name="HostButton" type="Button" parent="." unique_id=1089799073]
+layout_mode = 0
+offset_left = 635.0
+offset_top = 425.0
+offset_right = 835.0
+offset_bottom = 498.0
+theme_override_font_sizes/font_size = 40
+text = "创建房间"
+
+[node name="Tip" type="Label" parent="." unique_id=341446285]
+layout_mode = 0
+offset_left = 287.0
+offset_top = 515.0
+offset_right = 871.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 28
+text = "创建房间：填昵称+（可选）密码+端口
+加入房间：填昵称+密码+IP+端口
+游戏中回车发言，Esc 取消"
+horizontal_alignment = 1

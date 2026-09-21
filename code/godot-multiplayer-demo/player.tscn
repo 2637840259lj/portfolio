@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bpsbbljshu7ui"]
+
+[ext_resource type="Script" uid="uid://kbqufyxte4hs" path="res://Player.cs" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://c2rxdqob7lvpb" path="res://icon.svg" id="2_i3pqv"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqtel"]
+properties/0/path = NodePath(".:ServerPosition")
+properties/0/spawn = false
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=1141011465]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1004147521]
+texture = ExtResource("2_i3pqv")
+
+[node name="NameLabel" type="Label" parent="." unique_id=1711223001]
+offset_left = -80.0
+offset_top = -64.0
+offset_right = 80.0
+offset_bottom = -36.0
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+text = "昵称"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=673274123]
+replication_config = SubResource("SceneReplicationConfig_hqtel")
